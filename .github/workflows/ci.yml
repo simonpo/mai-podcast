@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke-test:
+    name: Smoke test (no Azure required)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate cover art
+        run: |
+          mkdir -p output
+          python - <<'EOF'
+          from package_mp3 import load_cover_config, generate_cover_art
+          from PIL import Image
+
+          config = load_cover_config()
+          path = generate_cover_art("output/cover.png", config=config)
+
+          img = Image.open(path)
+          assert img.size == (3000, 3000), f"Expected 3000x3000, got {img.size}"
+          assert img.mode == "RGB", f"Expected RGB, got {img.mode}"
+          print(f"Cover art OK: {img.size[0]}x{img.size[1]} {img.mode}")
+          EOF
+
+      - name: Verify cover.json loads cleanly
+        run: |
+          python - <<'EOF'
+          from package_mp3 import load_cover_config
+
+          config = load_cover_config()
+          assert "cover" in config, "Missing 'cover' key"
+          assert "metadata" in config, "Missing 'metadata' key"
+          required_cover = ["studio_banner", "show_title", "episode", "footer"]
+          required_meta = ["title", "artist", "album", "genre"]
+          for key in required_cover:
+              assert key in config["cover"], f"Missing cover.{key}"
+          for key in required_meta:
+              assert key in config["metadata"], f"Missing metadata.{key}"
+          print("cover.json schema OK")
+          EOF
+
+      - name: Verify jingle synthesis
+        run: |
+          python - <<'EOF'
+          import numpy as np
+          from add_jingle import generate_jingle, generate_outro
+
+          jingle = generate_jingle(sample_rate=48000, duration=1.0)
+          assert isinstance(jingle, np.ndarray), "Jingle is not ndarray"
+          assert len(jingle) > 0, "Jingle is empty"
+
+          outro = generate_outro(sample_rate=48000, duration=1.0)
+          assert isinstance(outro, np.ndarray), "Outro is not ndarray"
+          print(f"Jingle OK: {len(jingle)} samples — Outro OK: {len(outro)} samples")
+          EOF
