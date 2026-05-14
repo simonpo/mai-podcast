@@ -118,11 +118,11 @@ def generate_outro(sample_rate: int = 24000, duration: float = 5.0) -> np.ndarra
 
     # Silence gap before outro
     gap_before = np.zeros(int(sample_rate * 0.8))
-    # Long fade out
-    fade_len = int(sample_rate * 1.5)
+    # Long fade out (clamped so it never exceeds the array length)
+    fade_len = min(int(sample_rate * 1.5), len(mixed))
     mixed[-fade_len:] *= np.linspace(1, 0, fade_len)
-    # Fade in
-    fade_in = int(sample_rate * 0.3)
+    # Fade in (clamped)
+    fade_in = min(int(sample_rate * 0.3), len(mixed))
     mixed[:fade_in] *= np.linspace(0, 1, fade_in)
 
     mixed = np.concatenate([gap_before, mixed])
