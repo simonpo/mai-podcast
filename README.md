@@ -1,11 +1,13 @@
 ---
 title: "MAI Voice Podcast Studio"
 description: "Produce AI-voiced podcasts using Azure MAI-Voice-1 voices, with generated jingles and retro cover art."
-author: "ISE"
+author: "simonpo"
 ms.date: "2026-05-13"
 ms.topic: "overview"
 keywords: ["azure", "speech", "mai-voice", "podcast", "tts", "ai-foundry"]
 ---
+
+[![CI](https://github.com/simonpo/mai-podcast/actions/workflows/ci.yml/badge.svg)](https://github.com/simonpo/mai-podcast/actions/workflows/ci.yml)
 
 ## Overview
 
