@@ -1,0 +1,23 @@
+# A = Iris (female), B = Grant (male)
+# Format: CHARACTER: text
+# Or with style: CHARACTER (style): text
+# Lines starting with # are comments
+
+A (excitement): Welcome to the show! Today we're diving into the future of AI voice technology.
+B (excitement): Thanks for having me. It's an exciting time — the quality of synthetic voices has jumped dramatically.
+
+A (excitement): Right? Just a year ago, these voices sounded robotic. Now they're almost indistinguishable from real people.
+B: Almost. There are still subtle tells, but we're getting closer every day.
+
+A: So what's driving these improvements?
+B (professional): A big part of it is the shift to large language models for speech. The models now understand context — they know when to pause, when to emphasize, when to shift tone.
+
+A: Can you give us an example?
+B (excitement): Sure! Think about joy. Older systems would read  "Oh, great, another meeting" . Completely flat. Now the model picks up on that and adds the right inflection. 
+
+A (happiness): That's fascinating. And what about multilingual support?
+B: That's another frontier. The same voice can now speak multiple languages while keeping its personality. C'est énorme pour les créateurs de contenu du monde entier.
+
+A: Well, that's all the time we have today. Thanks for joining us!
+B (happiness): My pleasure. Always fun to geek out about voices.
+A: See y'all next week! Until then... keep it secret, keep it safe. 

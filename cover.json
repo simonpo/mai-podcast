@@ -1,0 +1,25 @@
+{
+  "cover": {
+    "studio_banner": "▶  M A I - V O I C E  S T U D I O S  ▶",
+    "exclamation": "WOAH",
+    "subtitle": "IT'S THE",
+    "show_title": "ISE PODCAST",
+    "episode": "EPISODE 1!",
+    "footer": "MAI-VOICE-1  ™  AZURE SPEECH SERVICES  ©2026"
+  },
+  "metadata": {
+    "title": "ISE Podcast Episode 1",
+    "subtitle": "A deep-dive into AI voice technology",
+    "artist": "MAI-Voice-1",
+    "album": "ISE Podcast",
+    "album_artist": "ISE",
+    "year": "2026",
+    "track": "1",
+    "genre": "Podcast",
+    "publisher": "ISE",
+    "author_url": "",
+    "copyright": "© 2026 ISE",
+    "comment": "Produced using Azure MAI-Voice-1 voices.",
+    "podcast_feed_url": ""
+  }
+}

@@ -1,0 +1,13 @@
+# Azure Speech
+azure-cognitiveservices-speech>=1.40.0
+azure-identity>=1.20.0
+python-dotenv>=1.0.0
+
+# Audio processing
+pydub>=0.25.1
+numpy>=1.24.0
+
+# Packaging & metadata
+mutagen>=1.47.0
+Pillow>=10.0.0
+requests>=2.31.0

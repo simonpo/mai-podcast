@@ -1,0 +1,10 @@
+[
+  {"character": "A", "text": "Have you ever wondered what it would be like to talk to an AI that sounds completely human?"},
+  {"character": "B", "text": "I think about it all the time. The technology is already here."},
+  {"character": "A", "text": "But does it worry you?", "style": "fear"},
+  {"character": "B", "text": "Not really. I think it opens up incredible possibilities. Imagine audiobooks where every character has a unique voice.", "style": "excitement"},
+  {"character": "A", "text": "That's a great point. Or language learning apps where you can practice with a natural-sounding partner.", "style": "happiness"},
+  {"character": "B", "text": "Exactly. The key is using this responsibly."},
+  {"character": "A", "text": "Agreed. Transparency matters — people should know when they're hearing a synthetic voice."},
+  {"character": "B", "text": "One hundred percent. Trust is the foundation.", "style": "determination"}
+]
